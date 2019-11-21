@@ -75,18 +75,17 @@ print(leapyear(400))
 
 #%%
 
-def fibonacci(runs, max):
+def fibonacci(runs):
     fiboList = [1, 1]
-    
     for i in range(runs):
-        fiboList = fiboList + [fiboList[-1]+fiboList[-2]]
-        if fiboList[-1] > max:
-            return fiboList[0:-1]
+        banana = fiboList[-1] + fiboList[-2]
+        print(banana)
+        fiboList.append(banana)
+        
     return fiboList
-
-printed = fibonacci(1000, 1000000)
-
-print(printed, len(printed))
+            
+printed = fibonacci(30)
+print(printed)
 
 #%%
 
@@ -95,6 +94,23 @@ def cube (number):
     return number**3
 
 print(cube(3))
+
+#%%
+
+import matplotlib.pyplot as plt
+fin = open('population_world.dat')
+header = fin.readline()
+unit = fin.readline()
+list_year= []
+list_pop= []
+for line in fin:
+    t1, p1 = line.strip().split('\t')
+    list_year.append(int(t1))
+    list_pop.append(int(p1))
+
+plt.plot(list_year, list_pop)
+plt.show()
+plt.close()
         
 
     
