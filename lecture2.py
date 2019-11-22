@@ -108,7 +108,7 @@ for line in fin:
     list_year.append(int(t1))
     list_pop.append(int(p1))
 
-plt.plot(list_year, list_pop)
+plt.scatter(list_year, list_pop)
 plt.show()
 plt.close()
         
